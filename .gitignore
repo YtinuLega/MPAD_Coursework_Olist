@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.tmp
+~$*.docx
+~$*.xlsx
+data/raw/*.csv
+data/processed/*.csv
+tableau/ecommerce_tableau_orders.csv
