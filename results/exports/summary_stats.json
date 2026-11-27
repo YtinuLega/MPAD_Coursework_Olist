@@ -1,0 +1,908 @@
+{
+  "raw_tables": {
+    "orders": {
+      "rows": 99441,
+      "cols": 8,
+      "exact_duplicates": 0,
+      "total_nulls": 4908,
+      "null_cols": {
+        "order_approved_at": 160,
+        "order_delivered_carrier_date": 1783,
+        "order_delivered_customer_date": 2965
+      }
+    },
+    "order_items": {
+      "rows": 112650,
+      "cols": 7,
+      "exact_duplicates": 0,
+      "total_nulls": 0,
+      "null_cols": {}
+    },
+    "customers": {
+      "rows": 99441,
+      "cols": 5,
+      "exact_duplicates": 0,
+      "total_nulls": 0,
+      "null_cols": {}
+    },
+    "products": {
+      "rows": 32951,
+      "cols": 9,
+      "exact_duplicates": 0,
+      "total_nulls": 2448,
+      "null_cols": {
+        "product_category_name": 610,
+        "product_name_lenght": 610,
+        "product_description_lenght": 610,
+        "product_photos_qty": 610,
+        "product_weight_g": 2,
+        "product_length_cm": 2,
+        "product_height_cm": 2,
+        "product_width_cm": 2
+      }
+    },
+    "payments": {
+      "rows": 103886,
+      "cols": 5,
+      "exact_duplicates": 0,
+      "total_nulls": 0,
+      "null_cols": {}
+    },
+    "reviews": {
+      "rows": 99224,
+      "cols": 7,
+      "exact_duplicates": 0,
+      "total_nulls": 145903,
+      "null_cols": {
+        "review_comment_title": 87656,
+        "review_comment_message": 58247
+      }
+    },
+    "category_translation": {
+      "rows": 71,
+      "cols": 2,
+      "exact_duplicates": 0,
+      "total_nulls": 0,
+      "null_cols": {}
+    }
+  },
+  "order_statuses": {
+    "delivered": 96478,
+    "shipped": 1107,
+    "canceled": 625,
+    "unavailable": 609,
+    "invoiced": 314,
+    "processing": 301,
+    "created": 5,
+    "approved": 2
+  },
+  "raw_date_range": [
+    "2016-09-04 21:15:19",
+    "2018-10-17 17:30:18"
+  ],
+  "orders_nulls_before": {
+    "order_id": 0,
+    "customer_id": 0,
+    "order_status": 0,
+    "order_purchase_timestamp": 0,
+    "order_approved_at": 160,
+    "order_delivered_carrier_date": 1783,
+    "order_delivered_customer_date": 2965,
+    "order_estimated_delivery_date": 0
+  },
+  "cleaning_orders": {
+    "total_orders": 99441,
+    "delivered_orders": 96478,
+    "delivered_missing_date_dropped": 8,
+    "negative_delivery_time_dropped": 0,
+    "orders_clean_count": 96470
+  },
+  "cleaning_products": {
+    "total_products": 32951,
+    "missing_category_filled_unknown": 610,
+    "missing_weight_filled_median": 2
+  },
+  "cleaning_reviews": {
+    "raw_reviews": 99224,
+    "duplicate_order_reviews_removed": 551,
+    "clean_reviews": 98673
+  },
+  "cleaning_items": {
+    "raw_items": 112650,
+    "non_positive_price": 0,
+    "negative_freight": 0
+  },
+  "merged_dataset": {
+    "rows": 96470,
+    "cols": 22,
+    "unique_customers": 93350,
+    "missing_payment_after_merge": 1,
+    "missing_review_after_merge": 646
+  },
+  "descriptive_stats": {
+    "order_total": {
+      "count": 96470.0,
+      "mean": 159.87,
+      "median": 105.28,
+      "std": 218.83,
+      "min": 9.59,
+      "25%": 61.85,
+      "75%": 176.34,
+      "max": 13664.08,
+      "iqr": 114.49,
+      "skew": 9.36
+    },
+    "total_price": {
+      "count": 96470.0,
+      "mean": 137.04,
+      "median": 86.5,
+      "std": 209.05,
+      "min": 0.85,
+      "25%": 45.9,
+      "75%": 149.9,
+      "max": 13440.0,
+      "iqr": 104.0,
+      "skew": 9.89
+    },
+    "total_freight": {
+      "count": 96470.0,
+      "mean": 22.83,
+      "median": 17.19,
+      "std": 21.74,
+      "min": 0.0,
+      "25%": 13.85,
+      "75%": 24.05,
+      "max": 1794.96,
+      "iqr": 10.2,
+      "skew": 12.14
+    },
+    "freight_share_pct": {
+      "count": 96470.0,
+      "mean": 20.91,
+      "median": 18.33,
+      "std": 12.57,
+      "min": 0.0,
+      "25%": 11.66,
+      "75%": 27.58,
+      "max": 95.55,
+      "iqr": 15.92,
+      "skew": 1.06
+    },
+    "items_count": {
+      "count": 96470.0,
+      "mean": 1.14,
+      "median": 1.0,
+      "std": 0.54,
+      "min": 1.0,
+      "25%": 1.0,
+      "75%": 1.0,
+      "max": 21.0,
+      "iqr": 0.0,
+      "skew": 7.56
+    },
+    "delivery_days": {
+      "count": 96470.0,
+      "mean": 12.56,
+      "median": 10.22,
+      "std": 9.55,
+      "min": 0.53,
+      "25%": 6.77,
+      "75%": 15.72,
+      "max": 209.63,
+      "iqr": 8.95,
+      "skew": 3.83
+    },
+    "delivery_delay_days": {
+      "count": 96470.0,
+      "mean": -11.18,
+      "median": -11.95,
+      "std": 10.18,
+      "min": -146.02,
+      "25%": -16.24,
+      "75%": -6.39,
+      "max": 188.98,
+      "iqr": 9.85,
+      "skew": 2.01
+    },
+    "max_installments": {
+      "count": 96470.0,
+      "mean": 2.93,
+      "median": 2.0,
+      "std": 2.71,
+      "min": 0.0,
+      "25%": 1.0,
+      "75%": 4.0,
+      "max": 24.0,
+      "iqr": 3.0,
+      "skew": 1.6
+    },
+    "review_score": {
+      "count": 95824.0,
+      "mean": 4.16,
+      "median": 5.0,
+      "std": 1.28,
+      "min": 1.0,
+      "25%": 4.0,
+      "75%": 5.0,
+      "max": 5.0,
+      "iqr": 1.0,
+      "skew": -1.48
+    }
+  },
+  "outliers_iqr": {
+    "order_total": {
+      "q1": 61.85,
+      "q3": 176.34,
+      "iqr": 114.49,
+      "upper_fence": 348.07,
+      "outliers_count": 7580,
+      "outliers_pct": 7.86
+    },
+    "delivery_days": {
+      "q1": 6.77,
+      "q3": 15.72,
+      "iqr": 8.95,
+      "upper_fence": 29.15,
+      "outliers_count": 4903,
+      "outliers_pct": 5.08
+    },
+    "freight_share_pct": {
+      "q1": 11.66,
+      "q3": 27.58,
+      "iqr": 15.92,
+      "upper_fence": 51.46,
+      "outliers_count": 2581,
+      "outliers_pct": 2.68
+    }
+  },
+  "kpi": {
+    "total_revenue": 15423084.73,
+    "total_product_revenue": 13220248.93,
+    "total_freight_revenue": 2202835.8,
+    "avg_check": 159.87,
+    "median_check": 105.28,
+    "avg_delivery_days": 12.56,
+    "median_delivery_days": 10.22,
+    "delayed_orders_cnt": 7820,
+    "delayed_orders_pct": 8.11,
+    "avg_review_score": 4.16,
+    "avg_review_ontime": 4.29,
+    "avg_review_delayed": 2.56
+  },
+  "monthly_peak": {
+    "month": "2017-11",
+    "orders_count": 7288,
+    "revenue": 1154424.7,
+    "avg_check": 158.4
+  },
+  "monthly_table": [
+    {
+      "month": "2016-10",
+      "orders_count": 265,
+      "revenue": 46490.66,
+      "avg_check": 175.44
+    },
+    {
+      "month": "2017-01",
+      "orders_count": 750,
+      "revenue": 127482.37,
+      "avg_check": 169.98
+    },
+    {
+      "month": "2017-02",
+      "orders_count": 1653,
+      "revenue": 271239.32,
+      "avg_check": 164.09
+    },
+    {
+      "month": "2017-03",
+      "orders_count": 2546,
+      "revenue": 414330.95,
+      "avg_check": 162.74
+    },
+    {
+      "month": "2017-04",
+      "orders_count": 2303,
+      "revenue": 390812.4,
+      "avg_check": 169.7
+    },
+    {
+      "month": "2017-05",
+      "orders_count": 3545,
+      "revenue": 566657.4,
+      "avg_check": 159.85
+    },
+    {
+      "month": "2017-06",
+      "orders_count": 3135,
+      "revenue": 490050.37,
+      "avg_check": 156.32
+    },
+    {
+      "month": "2017-07",
+      "orders_count": 3872,
+      "revenue": 566299.08,
+      "avg_check": 146.25
+    },
+    {
+      "month": "2017-08",
+      "orders_count": 4193,
+      "revenue": 645915.12,
+      "avg_check": 154.05
+    },
+    {
+      "month": "2017-09",
+      "orders_count": 4150,
+      "revenue": 701077.49,
+      "avg_check": 168.93
+    },
+    {
+      "month": "2017-10",
+      "orders_count": 4478,
+      "revenue": 751222.13,
+      "avg_check": 167.76
+    },
+    {
+      "month": "2017-11",
+      "orders_count": 7288,
+      "revenue": 1154424.7,
+      "avg_check": 158.4
+    },
+    {
+      "month": "2017-12",
+      "orders_count": 5513,
+      "revenue": 843851.21,
+      "avg_check": 153.07
+    },
+    {
+      "month": "2018-01",
+      "orders_count": 7069,
+      "revenue": 1078442.72,
+      "avg_check": 152.56
+    },
+    {
+      "month": "2018-02",
+      "orders_count": 6555,
+      "revenue": 966836.85,
+      "avg_check": 147.5
+    },
+    {
+      "month": "2018-03",
+      "orders_count": 7003,
+      "revenue": 1120726.7,
+      "avg_check": 160.04
+    },
+    {
+      "month": "2018-04",
+      "orders_count": 6798,
+      "revenue": 1133264.96,
+      "avg_check": 166.71
+    },
+    {
+      "month": "2018-05",
+      "orders_count": 6749,
+      "revenue": 1129246.12,
+      "avg_check": 167.32
+    },
+    {
+      "month": "2018-06",
+      "orders_count": 6096,
+      "revenue": 1011673.16,
+      "avg_check": 165.96
+    },
+    {
+      "month": "2018-07",
+      "orders_count": 6156,
+      "revenue": 1027319.78,
+      "avg_check": 166.88
+    },
+    {
+      "month": "2018-08",
+      "orders_count": 6351,
+      "revenue": 985558.16,
+      "avg_check": 155.18
+    }
+  ],
+  "top10_categories": [
+    {
+      "category": "health_beauty",
+      "orders_count": 8613,
+      "total_revenue": 1413081.37,
+      "avg_check": 164.06,
+      "median_check": 104.14,
+      "avg_review": 4.23,
+      "revenue_share_pct": 9.16,
+      "revenue_rank": 1
+    },
+    {
+      "category": "watches_gifts",
+      "orders_count": 5476,
+      "total_revenue": 1265330.5,
+      "avg_check": 231.07,
+      "median_check": 158.52,
+      "avg_review": 4.12,
+      "revenue_share_pct": 8.2,
+      "revenue_rank": 2
+    },
+    {
+      "category": "bed_bath_table",
+      "orders_count": 9184,
+      "total_revenue": 1226459.39,
+      "avg_check": 133.54,
+      "median_check": 105.62,
+      "avg_review": 4.01,
+      "revenue_share_pct": 7.95,
+      "revenue_rank": 3
+    },
+    {
+      "category": "sports_leisure",
+      "orders_count": 7492,
+      "total_revenue": 1119164.93,
+      "avg_check": 149.38,
+      "median_check": 110.96,
+      "avg_review": 4.24,
+      "revenue_share_pct": 7.26,
+      "revenue_rank": 4
+    },
+    {
+      "category": "computers_accessories",
+      "orders_count": 6511,
+      "total_revenue": 1032613.52,
+      "avg_check": 158.6,
+      "median_check": 103.16,
+      "avg_review": 4.08,
+      "revenue_share_pct": 6.7,
+      "revenue_rank": 5
+    },
+    {
+      "category": "furniture_decor",
+      "orders_count": 6188,
+      "total_revenue": 877613.67,
+      "avg_check": 141.83,
+      "median_check": 104.59,
+      "avg_review": 4.08,
+      "revenue_share_pct": 5.69,
+      "revenue_rank": 6
+    },
+    {
+      "category": "housewares",
+      "orders_count": 5680,
+      "total_revenue": 758811.35,
+      "avg_check": 133.59,
+      "median_check": 88.7,
+      "avg_review": 4.2,
+      "revenue_share_pct": 4.92,
+      "revenue_rank": 7
+    },
+    {
+      "category": "cool_stuff",
+      "orders_count": 3530,
+      "total_revenue": 692050.84,
+      "avg_check": 196.05,
+      "median_check": 148.16,
+      "avg_review": 4.23,
+      "revenue_share_pct": 4.49,
+      "revenue_rank": 8
+    },
+    {
+      "category": "auto",
+      "orders_count": 3792,
+      "total_revenue": 669780.97,
+      "avg_check": 176.63,
+      "median_check": 111.42,
+      "avg_review": 4.15,
+      "revenue_share_pct": 4.34,
+      "revenue_rank": 9
+    },
+    {
+      "category": "garden_tools",
+      "orders_count": 3400,
+      "total_revenue": 563536.38,
+      "avg_check": 165.75,
+      "median_check": 107.07,
+      "avg_review": 4.2,
+      "revenue_share_pct": 3.65,
+      "revenue_rank": 10
+    }
+  ],
+  "top10_share_pct": 62.36,
+  "total_categories": 74,
+  "bottom5_avg_check_cats": [
+    {
+      "category": "home_comfort_2",
+      "orders_count": 22,
+      "avg_check": 51.43
+    },
+    {
+      "category": "flowers",
+      "orders_count": 29,
+      "avg_check": 61.89
+    },
+    {
+      "category": "electronics",
+      "orders_count": 2502,
+      "avg_check": 80.3
+    },
+    {
+      "category": "food",
+      "orders_count": 436,
+      "avg_check": 81.3
+    },
+    {
+      "category": "diapers_and_hygiene",
+      "orders_count": 25,
+      "avg_check": 81.85
+    }
+  ],
+  "payment_summary": [
+    {
+      "payment_type": "credit_card",
+      "orders_count": 72818,
+      "total_revenue": 12102452.87,
+      "avg_check": 166.2,
+      "median_check": 109.41,
+      "avg_installments": 3.55,
+      "orders_share_pct": 75.48
+    },
+    {
+      "payment_type": "boleto",
+      "orders_count": 19191,
+      "total_revenue": 2770411.55,
+      "avg_check": 144.36,
+      "median_check": 93.79,
+      "avg_installments": 1.0,
+      "orders_share_pct": 19.89
+    },
+    {
+      "payment_type": "voucher",
+      "orders_count": 2977,
+      "total_revenue": 341955.42,
+      "avg_check": 114.87,
+      "median_check": 81.36,
+      "avg_installments": 1.15,
+      "orders_share_pct": 3.09
+    },
+    {
+      "payment_type": "debit_card",
+      "orders_count": 1483,
+      "total_revenue": 208121.43,
+      "avg_check": 140.34,
+      "median_check": 89.63,
+      "avg_installments": 1.0,
+      "orders_share_pct": 1.54
+    },
+    {
+      "payment_type": "not_defined",
+      "orders_count": 1,
+      "total_revenue": 143.46,
+      "avg_check": 143.46,
+      "median_check": 143.46,
+      "avg_installments": 1.0,
+      "orders_share_pct": 0.0
+    }
+  ],
+  "cc_installments_groups": [
+    {
+      "max_installments": "1 платіж",
+      "orders_count": 23355,
+      "avg_check": 100.66,
+      "median_check": 71.53
+    },
+    {
+      "max_installments": "2-3 платежі",
+      "orders_count": 22018,
+      "avg_check": 135.04,
+      "median_check": 111.58
+    },
+    {
+      "max_installments": "4-6 платежів",
+      "orders_count": 15693,
+      "avg_check": 181.73,
+      "median_check": 128.0
+    },
+    {
+      "max_installments": "7-10 платежів",
+      "orders_count": 11423,
+      "avg_check": 333.35,
+      "median_check": 206.04
+    },
+    {
+      "max_installments": "11+ платежів",
+      "orders_count": 329,
+      "avg_check": 360.33,
+      "median_check": 216.05
+    }
+  ],
+  "top10_states": [
+    {
+      "customer_state": "SP",
+      "orders_count": 40494,
+      "total_revenue": 5770529.01,
+      "avg_check": 142.5,
+      "avg_delivery_days": 8.76,
+      "avg_freight_share": 18.22,
+      "delayed_pct": 5.89,
+      "avg_review": 4.25,
+      "orders_share_pct": 41.98
+    },
+    {
+      "customer_state": "RJ",
+      "orders_count": 12350,
+      "total_revenue": 2055636.12,
+      "avg_check": 166.45,
+      "avg_delivery_days": 15.31,
+      "avg_freight_share": 21.37,
+      "delayed_pct": 13.47,
+      "avg_review": 3.97,
+      "orders_share_pct": 12.8
+    },
+    {
+      "customer_state": "MG",
+      "orders_count": 11354,
+      "total_revenue": 1819357.56,
+      "avg_check": 160.24,
+      "avg_delivery_days": 12.01,
+      "avg_freight_share": 21.56,
+      "delayed_pct": 5.6,
+      "avg_review": 4.19,
+      "orders_share_pct": 11.77
+    },
+    {
+      "customer_state": "RS",
+      "orders_count": 5344,
+      "total_revenue": 861540.99,
+      "avg_check": 161.22,
+      "avg_delivery_days": 15.3,
+      "avg_freight_share": 22.51,
+      "delayed_pct": 7.13,
+      "avg_review": 4.18,
+      "orders_share_pct": 5.54
+    },
+    {
+      "customer_state": "PR",
+      "orders_count": 4923,
+      "total_revenue": 781851.01,
+      "avg_check": 158.82,
+      "avg_delivery_days": 11.99,
+      "avg_freight_share": 22.29,
+      "delayed_pct": 5.0,
+      "avg_review": 4.24,
+      "orders_share_pct": 5.1
+    },
+    {
+      "customer_state": "SC",
+      "orders_count": 3546,
+      "total_revenue": 595135.45,
+      "avg_check": 167.83,
+      "avg_delivery_days": 14.95,
+      "avg_freight_share": 22.12,
+      "delayed_pct": 9.76,
+      "avg_review": 4.13,
+      "orders_share_pct": 3.68
+    },
+    {
+      "customer_state": "BA",
+      "orders_count": 3256,
+      "total_revenue": 591137.81,
+      "avg_check": 181.55,
+      "avg_delivery_days": 19.34,
+      "avg_freight_share": 24.49,
+      "delayed_pct": 14.0,
+      "avg_review": 3.93,
+      "orders_share_pct": 3.38
+    },
+    {
+      "customer_state": "DF",
+      "orders_count": 2080,
+      "total_revenue": 346428.91,
+      "avg_check": 166.55,
+      "avg_delivery_days": 12.97,
+      "avg_freight_share": 22.2,
+      "delayed_pct": 7.07,
+      "avg_review": 4.13,
+      "orders_share_pct": 2.16
+    },
+    {
+      "customer_state": "ES",
+      "orders_count": 1995,
+      "total_revenue": 317701.65,
+      "avg_check": 159.25,
+      "avg_delivery_days": 15.79,
+      "avg_freight_share": 22.83,
+      "delayed_pct": 12.23,
+      "avg_review": 4.08,
+      "orders_share_pct": 2.07
+    },
+    {
+      "customer_state": "GO",
+      "orders_count": 1957,
+      "total_revenue": 334662.57,
+      "avg_check": 171.01,
+      "avg_delivery_days": 15.61,
+      "avg_freight_share": 22.66,
+      "delayed_pct": 8.12,
+      "avg_review": 4.1,
+      "orders_share_pct": 2.03
+    }
+  ],
+  "slowest5_states": [
+    {
+      "customer_state": "RR",
+      "orders_count": 41,
+      "avg_delivery_days": 29.39,
+      "delayed_pct": 12.2,
+      "avg_review": 3.9
+    },
+    {
+      "customer_state": "AP",
+      "orders_count": 67,
+      "avg_delivery_days": 27.19,
+      "delayed_pct": 4.48,
+      "avg_review": 4.24
+    },
+    {
+      "customer_state": "AM",
+      "orders_count": 145,
+      "avg_delivery_days": 26.43,
+      "delayed_pct": 4.14,
+      "avg_review": 4.24
+    },
+    {
+      "customer_state": "AL",
+      "orders_count": 397,
+      "avg_delivery_days": 24.54,
+      "delayed_pct": 23.93,
+      "avg_review": 3.85
+    },
+    {
+      "customer_state": "PA",
+      "orders_count": 946,
+      "avg_delivery_days": 23.77,
+      "delayed_pct": 12.37,
+      "avg_review": 3.91
+    }
+  ],
+  "pivot_cat_pay": {
+    "bed_bath_table": {
+      "boleto": 120.68,
+      "credit_card": 137.46,
+      "debit_card": 138.99,
+      "voucher": 108.06
+    },
+    "computers_accessories": {
+      "boleto": 175.63,
+      "credit_card": 155.66,
+      "debit_card": 112.66,
+      "voucher": 105.97
+    },
+    "furniture_decor": {
+      "boleto": 135.2,
+      "credit_card": 145.88,
+      "debit_card": 114.17,
+      "voucher": 103.51
+    },
+    "health_beauty": {
+      "boleto": 144.39,
+      "credit_card": 171.0,
+      "debit_card": 142.76,
+      "voucher": 109.42
+    },
+    "sports_leisure": {
+      "boleto": 130.13,
+      "credit_card": 155.58,
+      "debit_card": 160.51,
+      "voucher": 119.54
+    },
+    "watches_gifts": {
+      "boleto": 179.0,
+      "credit_card": 242.03,
+      "debit_card": 319.5,
+      "voucher": 185.96
+    }
+  },
+  "crosstab_delay_review_pct": {
+    "Вчасно": {
+      "1.0": 6.59,
+      "2.0": 2.63,
+      "3.0": 7.99,
+      "4.0": 20.36,
+      "5.0": 62.43
+    },
+    "Затримка": {
+      "1.0": 46.26,
+      "2.0": 7.84,
+      "3.0": 11.38,
+      "4.0": 12.31,
+      "5.0": 22.22
+    }
+  },
+  "repeat_customers": [
+    {
+      "group": "Одноразові (1 замовлення)",
+      "customers_cnt": 90549,
+      "total_orders": 90549,
+      "total_spent": 14558130.11,
+      "avg_order": 160.78,
+      "avg_ltv": 160.78,
+      "customers_pct": 97.0,
+      "revenue_pct": 94.39
+    },
+    {
+      "group": "Повторні (2+ замовлень)",
+      "customers_cnt": 2801,
+      "total_orders": 5921,
+      "total_spent": 864954.62,
+      "avg_order": 145.95,
+      "avg_ltv": 308.8,
+      "customers_pct": 3.0,
+      "revenue_pct": 5.61
+    }
+  ],
+  "check_segments": [
+    {
+      "check_segment": "Малий (<60)",
+      "orders_count": 22987,
+      "total_revenue": 966271.25,
+      "avg_freight_share": 33.91,
+      "avg_installments": 1.63,
+      "avg_review": 4.24,
+      "orders_pct": 23.83,
+      "revenue_pct": 6.27
+    },
+    {
+      "check_segment": "Середній (60-150)",
+      "orders_count": 42195,
+      "total_revenue": 4174004.56,
+      "avg_freight_share": 19.96,
+      "avg_installments": 2.66,
+      "avg_review": 4.17,
+      "orders_pct": 43.74,
+      "revenue_pct": 27.06
+    },
+    {
+      "check_segment": "Вище середнього (150-350)",
+      "orders_count": 23792,
+      "total_revenue": 5115263.35,
+      "avg_freight_share": 13.9,
+      "avg_installments": 3.84,
+      "avg_review": 4.09,
+      "orders_pct": 24.66,
+      "revenue_pct": 33.17
+    },
+    {
+      "check_segment": "Великий (>350)",
+      "orders_count": 7496,
+      "total_revenue": 5167545.57,
+      "avg_freight_share": 8.7,
+      "avg_installments": 5.56,
+      "avg_review": 4.01,
+      "orders_pct": 7.77,
+      "revenue_pct": 33.51
+    }
+  ],
+  "key_correlations_pearson": {
+    "order_total_vs_installments": 0.32,
+    "order_total_vs_freight": 0.489,
+    "weight_vs_freight": 0.635,
+    "delivery_days_vs_review": -0.334,
+    "delay_days_vs_review": -0.267,
+    "order_total_vs_review": -0.042
+  },
+  "key_correlations_spearman": {
+    "order_total_vs_installments": 0.381,
+    "delivery_days_vs_review": -0.235,
+    "delay_days_vs_review": -0.176
+  },
+  "weekday_orders": {
+    "Пн": 15701,
+    "Вт": 15502,
+    "Ср": 15074,
+    "Чт": 14322,
+    "Пт": 13684,
+    "Сб": 10555,
+    "Нд": 11632
+  },
+  "peak_hour": 16,
+  "peak_hour_orders": 6475,
+  "quietest_hour": 5
+}

@@ -1,0 +1,3 @@
+group,customers_cnt,total_orders,total_spent,avg_order,avg_ltv,customers_pct,revenue_pct
+Одноразові (1 замовлення),90549,90549,14558130.11,160.78,160.78,97.0,94.39
+Повторні (2+ замовлень),2801,5921,864954.62,145.95,308.8,3.0,5.61
